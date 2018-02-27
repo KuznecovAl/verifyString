@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 
 public class VerString {
 
+    /*метод для валидации строки*/
     public static String testString(String stringForTest) {
 
         Pattern p1 = Pattern.compile("^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$");

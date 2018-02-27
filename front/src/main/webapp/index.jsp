@@ -7,7 +7,7 @@
 </head>
 <body>
 <div align="center">
-
+<%--форма для ввода текста с кнопкой--%>
     <form action="verStr" method="post" accept-charset="UTF-8" style="color:red;border: dotted greenyellow; background-color: darkblue">
         <b>String</b><input type="text" name="stringForVerify" maxlength="30" placeholder=${msg1} /><br/>
         <input type="submit" value="Проверка">

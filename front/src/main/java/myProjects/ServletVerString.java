@@ -12,10 +12,32 @@ import java.io.IOException;
 
 
 
-
+/*сервлет вызываемый после нажатия кнопки на jsp*/
 @WebServlet(urlPatterns = "/verStr")
 public class ServletVerString extends HttpServlet {
 
+
+    @Override
+    public void init() throws ServletException {
+        super.init();
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        super.doGet(req, resp);
+    }
+
+    @Override
+    public void destroy() {
+        super.destroy();
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        verify(req, resp);
+    }
+
+    /*метод для обработки реквеста и респонса*/
     protected void verify(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html; charset=UTF-8");
         resp.setCharacterEncoding("UTF-8");
@@ -30,22 +52,6 @@ public class ServletVerString extends HttpServlet {
         dispatcher.forward(req,resp);
         return;
     }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        verify(req, resp);
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
-    }
-
-    @Override
-    public void destroy() {
-        super.destroy();
-    }
-
 
 }
 
